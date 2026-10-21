@@ -1,0 +1,20 @@
+{
+  "name": "tubepoli",
+  "interface": {
+    "displayName": "tubepoli"
+  },
+  "plugins": [
+    {
+      "name": "tubepoli",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tubepoli-chatgpt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

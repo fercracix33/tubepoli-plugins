@@ -1,0 +1,25 @@
+{
+  "name": "tubepoli",
+  "version": "0.3.0",
+  "displayName": "tubepoli",
+  "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
+  "author": {
+    "name": "tubepoli",
+    "email": "hola@tubepoli.com",
+    "url": "https://tubepoli.com"
+  },
+  "homepage": "https://tubepoli.com",
+  "keywords": [
+    "youtube",
+    "creadores",
+    "packaging",
+    "guion",
+    "estrategia",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://tubepoli.com/soporte",
+  "supportUrl": "https://tubepoli.com/soporte",
+  "privacyPolicyUrl": "https://tubepoli.com/privacidad",
+  "termsOfServiceUrl": "https://tubepoli.com/terminos"
+}

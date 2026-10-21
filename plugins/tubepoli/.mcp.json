@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tubepoli": {
+      "type": "http",
+      "url": "https://tubepoli.com/mcp"
+    }
+  }
+}

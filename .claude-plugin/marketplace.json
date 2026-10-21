@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "tubepoli",
+  "description": "Plugins oficiales de tubepoli: conecta tu IA con tu canal de YouTube y añade las guías del método.",
+  "owner": {
+    "name": "tubepoli",
+    "email": "hola@tubepoli.com",
+    "url": "https://tubepoli.com"
+  },
+  "plugins": [
+    {
+      "name": "tubepoli",
+      "source": "./plugins/tubepoli",
+      "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
+      "category": "productivity",
+      "homepage": "https://tubepoli.com"
+    }
+  ]
+}
