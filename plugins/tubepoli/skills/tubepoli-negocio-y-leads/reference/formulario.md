@@ -36,7 +36,7 @@ Plantilla única: nombre + email + 1–3 preguntas de cualificación + consentim
 - `business_forms_publish` comprueba que el lead magnet tiene recurso entregable y, si entrega por email, que el dominio está verificado (si no, `DEPENDENCY_NOT_READY`).
 - Tras los primeros leads: `business_funnel_summary` por versión de formulario (`groupBy: "form_version"`) para ver si un cambio de preguntas altera volumen o calidad. Pocas respuestas no son una validación.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - `business_forms_pause` / `business_forms_archive` dejan de aceptar envíos (efecto público).
 - `business_forms_update` cambia preguntas o textos creando una versión nueva.

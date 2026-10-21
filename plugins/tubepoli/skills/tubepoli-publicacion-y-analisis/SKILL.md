@@ -32,7 +32,7 @@ Publicar es siempre una acción explícita: mover la ficha de etapa no publica n
 6. Aprendizaje: `learning_record` (`title`; `scope: "video"` con `videoId` del vídeo analizado, o `scope: "bucket"` con `bucketId`, o `"channel"`) separando `observation` (hechos), `hypothesis` (por qué creemos) y `proposal` (qué haremos), con `decision` (`keep | change | test`) y `appliesToVideoId`. Conviértelo en trabajo: una idea nueva con `ideas_capture_batch` (`origin: "learning"`, `originRef: {type: "learning", id}`) o una tarea en la siguiente ficha.
 7. Prueba de título/miniatura en Studio (máximo 3 opciones): datos con `analytics_import` (`variant`, `abTestWatchShare`) y conclusión con `learning_record` (`kind: "packaging"`, `videoId`); gana la que da más tiempo total de visualización.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Publicación: `publication_reconcile` (estado real con conexión), tareas de Studio y promoción como objetos con `distribution_tasks_prepare` (sin `items`, las de Studio a partir del paquete) y `distribution_tasks_update` (`status: "confirmed"` con `evidence`), y la vía nativa (ver [reference/publicar-via-studio.md](reference/publicar-via-studio.md)).
 - Fuentes de datos: `analytics_available_reports`, `analytics_authorize` (URL para la persona titular) y `analytics_sync` (job); detalle por vídeo: `analytics_video_get`.

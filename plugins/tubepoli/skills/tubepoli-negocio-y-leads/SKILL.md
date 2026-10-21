@@ -36,9 +36,9 @@ Nivel 2 del método: con vistas, el siguiente problema es convertirlas en leads 
 2. Cualificación y estado comercial (`new → qualified → call → client` o `discarded`): la cualificación por reglas es automática; el estado comercial lo lleva la persona en la web (Negocio › Leads). Un clic en el enlace de reserva **no** es una llamada. tubepoli no envía nada al lead.
 3. Embudo: `business_funnel_summary` (visitas, envíos, leads, cumplen criterios, entregas, clics de reserva; `groupBy: "video" | "link" | "form_version"`). Tasas solo con numerador y denominador compatibles.
 4. Señales de audiencia: lo que repiten los leads en sus respuestas, resumido sin datos personales, va como señal (`own_sources_capture`, `sourceType: "lead_response"`).
-5. Ajustes del formulario, enlaces y pruebas del lead magnet, y derechos del lead (exportar o borrar sus datos): desde la web o con el catálogo completo (ver «Avanzado»).
+5. Ajustes del formulario, enlaces y pruebas del lead magnet, y derechos del lead (exportar o borrar sus datos): con `operations_call` (ver «Avanzado»).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Oferta: `business_offers_create` (`name`, `kind`, `promise`, `audience`, `problem`, `priceText`, `evidence`; `ladderUp`/`ladderDown`).
 - Correo con dominio propio: `domains_status` → `domains_create` → la persona publica los registros DNS → `domains_verify`.

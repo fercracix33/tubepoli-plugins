@@ -40,7 +40,7 @@ Todo lo demás (problemas concretos de la audiencia, conocimiento propio, difere
    - `planned` o sin publicaciones: nivel 0 provisional, foco «completar la prueba de buckets» → `tubepoli-estrategia-y-buckets`.
    - `existing_with_publications`: propón que la persona titular conecte YouTube desde **Ajustes** en la web de tubepoli (tú nunca recibes tokens); mientras tanto, los datos de Studio que te pase se registran como declarados (`analytics_import`). Después, diagnóstico de nivel con evidencia (`tubepoli-estrategia-y-buckets`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Conectar YouTube desde el chat: `channels_youtube_connect` (devuelve una URL que abre la persona titular) y comprobar con `channels_youtube_status`.
 - Historial del contexto: `channels_context_versions_list`, `channels_context_versions_compare` y, si el usuario lo pide, `channels_context_restore`.

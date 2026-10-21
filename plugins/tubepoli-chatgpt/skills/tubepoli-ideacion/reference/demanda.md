@@ -24,7 +24,7 @@ En el brief, con `ideas_brief_update` (`expectedBriefRevision`, `changes`):
 - Vistas desconocidas son `null`, nunca 0. Cuenta la edad del vídeo de referencia.
 - Una referencia popular indica interés, no garantiza vistas.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 `ideas_evidence_add` (`operationId` obligatorio) guarda cada evidencia como objeto propio:
 

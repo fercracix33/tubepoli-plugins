@@ -46,7 +46,7 @@ Salida: lista corta «Hoy: 1) … 2) … 3) …».
 4. `reviews_decisions_set` con una decisión por tema (nivel, foco, mezcla, plan, ritmo, fase; `subject: {type: "channel", id: <channelId>, label: "<tema>"}`) y `reviews_close` con `conclusion` y `nextCycle`.
 5. Mes siguiente: ideación mensual (ocho ideas, una por bucket, ver `tubepoli-ideacion`) y días de grabación por lotes para grabar el doble de lo que se publica (ver `tubepoli-produccion-y-montaje`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Diaria: `pipeline_calendar` (`from`, `to`), `tasks_update` (responsable, fecha, bloqueo, `completionCriteria`) y `tasks_create` para lo que falte.
 - Mensual: sesión de ideación con plantilla, `ideas_session_create` (`template: "monthly_8"`); sesiones de grabación, `production_session_create`; cambio de fase, `strategy_phase_set`.

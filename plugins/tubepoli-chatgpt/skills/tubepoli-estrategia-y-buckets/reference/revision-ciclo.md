@@ -25,7 +25,7 @@ Se abre al confirmar todas las publicaciones (5×3) o al terminar el horizonte (
 - Con objetivo de clientes, ordena también por leads (o leads por cada 1.000 vistas) además de vistas.
 - Mantén al menos un bucket que traiga audiencia nueva.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 Cambio de fase: `strategy_phase_set` (`expectedStrategyRevision`, `phase`: `optimization` o `accordion`, con `accordion.maxTrialBuckets`).
 

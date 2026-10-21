@@ -34,17 +34,19 @@ description: "Aplica la capa estratégica del método en tubepoli: diagnostica e
 
 Plantillas separadas (no se suman): ver [reference/plantillas-plan.md](reference/plantillas-plan.md).
 
+0. Antes de crear: mira los planes abiertos en `context_get` (o `plans_list`). Si hay un borrador o un plan pausado, pregunta si se continúa (`plans_activate`) o se descarta (ver «Avanzado»): una ficha solo ocupa un hueco pendiente en los planes del canal.
 1. `plans_create` con `template: "sept_5x3"` (5 buckets × 3 publicaciones = 15 huecos) o `"june_3_months"` (horizonte de tres meses), `buckets` incluidos (`bucketId`) y `question` (qué queremos aprender).
 2. `plans_calendar_propose` (`planId`, `calendar`: `timeZone`, `startDate`, `weeklySlots` p. ej. martes y viernes, `pauses`). Muestra fechas, rotación y conflictos. Nada se compromete aún.
 3. Si el usuario está de acuerdo: `plans_calendar_apply` (`proposalId`, `expectedPlanRevision` = el `planRevision` que devolvió el plan) y `plans_activate` (con el `planRevision` nuevo).
-4. Los huecos no son fichas: cuando haya una idea real, `plans_slots_assign` (`slotId` de `byBucket[].missingSlotIds` en `plans_progress_get`, `videoId`, `expectedPlanRevision`). Seguimiento: `plans_progress_get` (también lo enseña `show_plan`).
+4. Los huecos no son fichas: cuando haya una idea real, `plans_slots_assign` (`slotId` de `byBucket[].missingSlotIds` en `plans_progress_get`, `videoId`, `expectedPlanRevision`). Seguimiento: `plans_progress_get` (también lo enseña `show_plan`). Si la asignación falla con `duplicate`, `error.details.conflict` dice en qué plan y hueco está ya la ficha: libera ese hueco (ver «Avanzado») o continúa ese plan.
 
 ### D. Revisión del ciclo y siguiente plan
 
 Detalle en [reference/revision-ciclo.md](reference/revision-ciclo.md): `plans_progress_get` → `reviews_prepare` (`kind: "bucket_test"`) → `analytics_compare` (`mode: "buckets"`, media y mediana) → `reviews_decisions_set` (una decisión por bucket) → `reviews_close` → siguiente plan con `plans_create`.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
+- Planes: descartar un borrador con `plans_cancel` (`reason` obligatorio) y liberar un hueco con `plans_slots_unassign` (el error `duplicate` de `plans_slots_assign` trae en `details.conflict` el `planId`, el `slotId` y el `planRevision` que necesita).
 - Evidencia del nivel: `analytics_channel_get` (totales del canal sincronizados) y `research_benchmark` (media de las medianas de tus canales de referencia).
 - Cambiar la fase: `strategy_phase_set` con `expectedStrategyRevision` (`phase`: `trial`, `optimization`, `accordion`; en acordeón, `accordion.maxTrialBuckets`, 2 por defecto).
 - Ritmo y mezcla guardados: `strategy_capacity_update` (`useMethodDefaults: true` o valores reales) y `strategy_mix_update` (`useMethodTemplate: true`).

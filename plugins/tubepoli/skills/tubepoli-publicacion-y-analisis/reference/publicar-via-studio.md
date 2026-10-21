@@ -27,7 +27,7 @@ Antes de escribir la descripción, comprueba `business_ctas_get` (`videoId`): tr
 2. Tareas de Studio (pantalla final, comentario fijado, prueba de título/miniatura) y promoción (newsletter, piezas derivadas, comunidad): repásalas con el usuario a partir del texto exportado.
 3. Recortar algo del vídeo publicado (p. ej. la intro) se hace en Studio; si cambia el montaje, regístralo como versión nueva (`cuts_register`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Estado real tras publicar: `publication_reconcile` (privado, programado, público, procesando).
 - Tareas como objetos: `distribution_tasks_prepare` sin `items` crea las de Studio a partir del paquete; con `items` para promoción (`kind: "promotion"`, `"derived_piece"`, `"community_post"`…), prueba A/B (`"ab_test"`) o cambio del montaje publicado (`"cut_change"`). Confirmar: `distribution_tasks_update` (`status: "confirmed"` con `evidence`).

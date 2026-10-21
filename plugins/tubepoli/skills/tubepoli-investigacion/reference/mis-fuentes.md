@@ -23,7 +23,7 @@ Frase recurrente de presentación, credenciales, resultados demostrables, esfuer
 
 Cada semana: captura los fragmentos de la semana (`own_sources_capture`), repásalos con el usuario (`own_sources_list` con `from` = inicio de la semana) y decide por señal: idea (`ideas_capture_batch`), historia (señal `experience` con su `note`), usable más adelante o descartar. Es distinta de la revisión semanal de métricas (ver `tubepoli-rutinas`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Importar señales ya minimizadas de leads o pilotos: `own_sources_import` (`origin.module`: `m16_leads`, `f52_pilot`, `external`).
 - Consolidar repeticiones en un objeto propio: `own_sources_consolidate` con un `criterion` explícito.

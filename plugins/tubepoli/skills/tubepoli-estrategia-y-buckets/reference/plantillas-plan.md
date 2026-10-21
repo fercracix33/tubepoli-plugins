@@ -29,7 +29,7 @@ Son dos variantes del método. Se elige una; no se combinan ni se acumulan sus r
 
 Las fechas del plan son **propuestas**. La fecha comprometida de una ficha es otra cosa y la programación en YouTube es otra distinta (Distribución). Ninguna de ellas publica nada.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Ajustes de un plan en curso: `plans_calendar_adjust` (mover huecos), `plans_slots_add`, `plans_slots_remove`, `plans_update`, `plans_pause`, `plans_resume`.
 - Fecha comprometida de una ficha: `commitments_set` (`localDate`, `expectedRevision` de la ficha).

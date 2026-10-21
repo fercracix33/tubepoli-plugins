@@ -37,7 +37,7 @@ La retención depende del guion, no de la cámara ni de la edición. Y la intro 
 
 Detalle de bloques y pruebas: [reference/bloques.md](reference/bloques.md). Estructura de un solo cambio: [reference/un-solo-cambio.md](reference/un-solo-cambio.md).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Estructura: `scripts_blocks_add` (p. ej. `kind: "rehook"`), `scripts_blocks_reorder`, `scripts_blocks_remove`.
 - Historias y autoridad: `scripts_stories_suggest` (solo historias con permiso público) y `authority_list`.

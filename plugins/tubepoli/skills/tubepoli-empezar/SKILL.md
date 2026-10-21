@@ -57,9 +57,9 @@ Si tu cliente no carga estas guías como skills, léelas con `guides_list` y `gu
 
 ## Herramientas: núcleo y catálogo completo
 
-El conector `https://tubepoli.com/mcp` publica el **núcleo** del método (unas 80 herramientas): lo que usa el flujo principal de cada guía. Cada guía termina con un apartado «Avanzado» que nombra operaciones del **catálogo completo**; solo existen si el usuario añade también el conector `https://tubepoli.com/mcp/completo`. Si una operación avanzada no aparece en tus herramientas, no la inventes: usa el camino del núcleo, propón hacerlo desde la web de tubepoli o pide al usuario que añada el catálogo completo.
+El conector `https://tubepoli.com/mcp` publica como herramientas el **núcleo** del método (unas 85): lo que usa el flujo principal de cada guía. **Todo lo demás que hace la web también está a tu alcance sin cambiar de conector**: busca la operación con `operations_search` (texto o dominio), lee su esquema y efectos con `operations_describe` y ejecútala con `operations_call` `{"operation": "<nombre>", "input": {…}}`. Se aplican exactamente las mismas reglas que a una herramienta directa (permisos, canales, `operationId`, revisión esperada, confirmación de efectos públicos) y la respuesta es la misma. Cada guía termina con un apartado «Avanzado (vía operations_call)» que nombra esas operaciones. No mandes al usuario a la web por algo que puedes hacer así; si una operación no existe, `operations_search` te lo dirá.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Resultado registrado de un `operationId`: `operations_get`.
 - Buscar por texto en fichas, buckets, referencias, fuentes y leads: `space_search`. Qué ha cambiado y quién: `activity_list`.

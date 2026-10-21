@@ -34,7 +34,7 @@ Con 0 h o muestra pequeña, la herramienta avisa si eliges `review` o `experimen
 
 Tres líneas: dato con su cobertura («300 impresiones en 22 h; CTR 4,1 %, muestra pequeña»), comparación («tu vídeo de referencia tenía 1.200 a las 24 h») y decisión («esperamos al chequeo de 72 h»). Nunca conviertas un dato desconocido en 0.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Qué informes hay y su demora: `analytics_available_reports`; detalle de un vídeo: `analytics_video_get`.
 - Retención mapeada a los bloques del guion: `analytics_retention_map`.

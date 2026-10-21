@@ -45,7 +45,7 @@ Estados: `not_evaluated` (≠ no cumple), `supported`, `questioned`, `insufficie
 
 > **Nota sobre guardar candidatas:** `ideas_capture_batch` admite 20 ideas por llamada. En el 100→10→1, genera y filtra las 100 en la conversación y guarda en tubepoli solo las ~10 finalistas (`selection: "shortlisted"`) dentro de la sesión; guarda también las descartadas solo si el usuario quiere conservarlas para más adelante.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Cruces tema × formato guardados: `patterns_combinations_preview` (no guarda nada) e `ideas_patterns_cross` (propone texto, no cambia el título).
 - Descartar una idea ya guardada: `ideas_discard` (`expectedRevision` de la ficha, `reason`; se puede recuperar con `ideas_restore`). Marcar finalistas ya capturadas: `ideas_shortlist`.

@@ -38,7 +38,7 @@ La estructura es orientativa: reparte el contenido entre los bloques con `script
 
 Para comprobar que alguien consigue el resultado siguiendo la explicación: pídele al creador que lo pruebe con 2–3 personas parecidas al cliente ideal y registra lo que pase como aprendizaje (`learning_record` con `kind: "utility"` y el `videoId`). Es una prueba editorial, no demuestra causalidad.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Añadir, quitar o reordenar bloques: `scripts_blocks_add`, `scripts_blocks_remove`, `scripts_blocks_reorder`.
 - Historia del banco: `proofs.add` con `sourceKind: "m17_story"` y `sourceRef: {type: "story_card", id}` (solo historias con permiso público).

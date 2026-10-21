@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tubepoli",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Tu canal de YouTube con método: conecta ChatGPT con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
   "author": {
     "name": "tubepoli",

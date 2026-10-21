@@ -49,7 +49,7 @@ Guarda las anotaciones en la primera llamada: es la que crea la referencia.
 - Problemas encontrados (preguntas de buscadores, comentarios, investigación tuya): con el usuario, añádelos al contexto del canal (`channels_context_update` → `bodyMarkdown`, sección «Problemas de la audiencia» con su fuente; lee el cuerpo vigente y añade, no sustituyas). Son problemas con fuente, no demanda medida.
 - Señales e historias de la semana real del creador: ver [reference/mis-fuentes.md](reference/mis-fuentes.md) (`own_sources_capture` y, para convertirlas en idea, `ideas_capture_batch` con `originRef`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Listado y marcas de canales: `research_channels_list`, `research_channels_update` (`highlighted: true`).
 - Búsqueda en YouTube y cuota: `search_preview`, `search_run`, `searches_save`, `budgets_get` (detalle en [reference/busqueda-y-cuota.md](reference/busqueda-y-cuota.md)); benchmark del nicho: `research_benchmark`; seguir el trabajo de sincronización: `jobs_get`.

@@ -24,7 +24,7 @@ El packaging es la promesa del vídeo: decide si alguien hace clic y condiciona 
 8. **Variaciones** del concepto elegido (después, no antes): `packaging_concepts_create` con `level: "variation"` y `parentConceptId` (pequeñas variaciones del ganador, p. ej. el color de la camiseta, para exprimir lo que ya funciona).
 9. **Pruebas** (tras publicar): la persona configura la prueba en YouTube Studio (hasta 3 opciones; tubepoli no la lanza). Acordad las opciones (pareja elegida y 1–2 alternativas guardadas) y, al acabar, registra los datos de Studio con `analytics_import` (`values` con `variant` y `abTestWatchShare`) y la conclusión como aprendizaje (`learning_record` con `kind: "packaging"` y el `videoId`).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Fórmulas del canal: `packaging_formulas_suggest` → `packaging_formulas_apply` (si falta una variable responde `variables_pending`).
 - Archivar títulos descartados: `packaging_titles_update` (`archived: true`). Vista conjunta guardada: `packaging_pairs_compare`.

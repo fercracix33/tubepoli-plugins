@@ -32,7 +32,7 @@ Lo que pasa después de grabar pesa menos en el resultado que idea, packaging y 
 5. Final: `cuts_list` (`videoId`) da cada versión con su `revision` (cambia con cada comentario) y el final vigente. Con el visto bueno del usuario, `cuts_final_select` (`cutId`, `expectedCutRevision`, `expectedFinalId`: el id del final vigente o `null`). Después `pipeline_move` (`toStage: "distribution"`).
 6. Fotograma para la miniatura: la persona lo exporta del montaje y lo sube desde la web (Packaging).
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 - Tomas: `production_takes_derive` (una por bloque y una por recurso declarado; repetirlo no duplica), `production_takes_update` (`status`: `recorded` exige `evidence` si lo haces tú; `not_applicable` exige `reason`) y `production_takes_add` (toma suelta).
 - Sesiones por lotes: `production_session_create` (`name`, `videoIds` hasta 20, `localDate`, `startTime`, `location`, `needs`) y `production_sessions_list`.

@@ -17,7 +17,7 @@ Reglas:
 - Suscriptores ocultos o vistas no devueltas = desconocido, nunca 0.
 - Si recibes `QUOTA_EXCEEDED`, trabaja con lo ya sincronizado o espera `retryAfterSeconds`.
 
-## Avanzado (requiere el catálogo completo: https://tubepoli.com/mcp/completo)
+## Avanzado (vía operations_call)
 
 | Acción | Herramienta | Coste |
 | --- | --- | --- |

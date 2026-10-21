@@ -16,7 +16,7 @@ tubepoli es un sistema de trabajo para canales de YouTube: contexto del canal, e
 
 En Claude Code, en un solo paso: `/plugin install tubepoli --marketplace fercracix33/tubepoli-plugins`.
 
-El conector publica el núcleo del método (unas 80 herramientas), las que usa el flujo principal de las guías. Lo que las guías marcan como «Avanzado» necesita el catálogo completo: `https://tubepoli.com/mcp/completo` (añádelo como segundo conector; útil también en Claude Code o Codex).
+El conector publica como herramientas el núcleo del método (unas 85), las que usa el flujo principal de las guías. El resto del catálogo (lo que las guías marcan como «Avanzado») se usa desde el mismo conector con `operations_search`, `operations_describe` y `operations_call`. En Claude Code o Codex también puedes añadir el catálogo completo como herramientas: `https://tubepoli.com/mcp/completo`.
 
 ## Privacidad y soporte
 
