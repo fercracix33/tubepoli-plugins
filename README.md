@@ -15,10 +15,11 @@ En Claude Code: `/plugin install tubepoli --marketplace fercracix33/tubepoli-plu
 
 ## Añadirlo en ChatGPT
 
-1. En la web de ChatGPT, ve a **Plugins › Personales** y pulsa **Añadir › Añadir un marketplace**.
-2. En **Origen** escribe `fercracix33/tubepoli-plugins` y en **Referencia de Git**, `main`. Deja vacías las rutas dispersas.
-3. Instala el plugin **tubepoli** y pulsa **Conectar**.
-4. Se abrirá tubepoli: elige tu canal y pulsa **Autorizar**. Después, en modo Work, escribe `@tubepoli`.
+En la web, ChatGPT conecta solo los servidores añadidos a mano, así que la conexión y las guías van por separado:
+
+1. **Conexión:** en la web de ChatGPT, ve a **Plugins › Personales**, pulsa **Añadir › Añadir servidor MCP personalizado**, escribe `tubepoli` como nombre, `https://tubepoli.com/mcp` como dirección y **OAuth** como autenticación, y crea el plugin. Ábrelo, instálalo (**+**) y pulsa **Conectar**; se abrirá tubepoli para que elijas tu canal y pulses **Autorizar**.
+2. **Guías:** en **Plugins › Personales**, pulsa **Añadir › Añadir un marketplace**. En **Origen** escribe `fercracix33/tubepoli-plugins` y en **Referencia de Git**, `main`; deja vacías las rutas dispersas. Instala el plugin **tubepoli** del marketplace.
+3. En modo Work, escribe `@tubepoli` en un chat.
 
 En Codex: `codex plugin marketplace add fercracix33/tubepoli-plugins --ref main`.
 
