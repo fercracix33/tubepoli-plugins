@@ -13,12 +13,14 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 - El usuario quiere un primer montaje rápido, quitar silencios y muletillas, ajustar cortes, añadir música, rótulos o subtítulos, o ver cómo va.
 - Para revisar el montaje de un editor externo usa `tubepoli-produccion-y-montaje` (comentarios por tiempo y capa).
 - Para intros, datos o explicaciones animadas a medida (escenas de motion graphics con storyboard) usa `tubepoli-motion`.
+- **Siempre junto con `tubepoli-retencion`**: ritmo por tramos, material sin repetir, lectura, música y la crítica P0/P1/P2 antes de terminar. Si no hay grabación (locución + material), su modo «sin grabación» va primero: lista de planos y presupuesto de material antes de montar.
 
 ## Antes de empezar
 
 1. `production_get` (`videoId`): guion elegido, bloques y materiales. Sin materiales recibidos no hay nada que montar: dilo y propón subirlos.
-2. Confirma con el usuario **qué** se monta (todas las tomas en el orden del guion o un montaje concreto) y **qué quiere** en esta pasada: por el método, primero el montaje (qué se queda y en qué orden) y la música; gráficos y efectos después.
-3. Si la ficha aún no tiene proyecto de montaje, créalo con la operación de creación del apartado Avanzado (desde los materiales o desde un corte). Si ya existe, úsalo: un vídeo puede tener varios, pero no los dupliques sin motivo.
+2. Lee `tubepoli-retencion` (baremos y, si no hay cara, «sin grabación»): sin lista de planos y material suficiente no se empieza a montar.
+3. Confirma con el usuario **qué** se monta (todas las tomas en el orden del guion o un montaje concreto) y **qué quiere** en esta pasada: por el método, primero el montaje (qué se queda y en qué orden) y la música; gráficos y efectos después.
+4. Si la ficha aún no tiene proyecto de montaje, créalo con la operación de creación del apartado Avanzado (desde los materiales o desde un corte). Si ya existe, úsalo: un vídeo puede tener varios, pero no los dupliques sin motivo.
 
 ## Flujo paso a paso
 
@@ -30,10 +32,11 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
    - `text.add {text, at, duration, preset: lower_third | title | caption | plain}` y `text.update` (texto simple). Para rótulos animados con la marca del canal, subtítulos, B-roll y transiciones, ver Avanzado, «Gráficos, B-roll y sonido».
    - Para un cambio grande, primero `dryRun: true`: devuelve el antes/después sin guardar; enséñalo y aplica después.
    - Los tiempos son de la **composición** (lo que se ve), no del archivo original; vuelve a leer la línea de tiempo tras cada lote.
-4. **Preview** — `edit_render_request` (`kind: "preview"`, 540p; `range: [inicio, fin]` para revisar solo un tramo): devuelve `render.id`, `nextStep` y `pollAfterSeconds`. Di que está en marcha y, pasado ese tiempo, lee el resultado (Avanzado, «Verificación»): vídeo, métricas (sonoridad, picos, negros, congelados) y hallazgos con `fixHint`. Si responde `render_worker_not_configured`, el montaje se puede editar pero no renderizar: dilo.
-5. **Revisar** — `show_editor` (`videoId` o `projectId`) enseña al usuario el preview, los fotogramas, la línea de tiempo, la transcripción con los cortes tachados y las sugerencias pendientes. Para verlo tú, pide la hoja de contactos de los cortes o fotogramas concretos (Avanzado, «Verificación»): llegan como imágenes con su descripción. Comprueba: cortes limpios (sin palabras a medias), intro visualmente parecida a la miniatura, rótulos legibles y fuera de la zona de botones, sonido sin saltos.
+   - Cada respuesta trae `craft` (resumen de oficio: repetición, estáticos, planos largos, lectura…). Con P0 o P1, corrígelo antes de seguir; el detalle con arreglos, en `edit_craft_check`. Las imágenes entran con deriva suave por defecto (`motion: "none"` para dejarlas quietas) y un vídeo ya usado entra desde un tramo libre.
+4. **Preview** — `edit_render_request` (`kind: "preview"`, 540p; `range: [inicio, fin]` para revisar solo un tramo): devuelve `render.id` y `nextStep`. Di que está en marcha y lee el resultado con `edit_renders_get` (`renderId`, `waitSeconds: 55`: el servidor espera a que termine; si sigue en curso, repite — no sondees en bucle): vídeo, métricas (sonoridad, picos, negros, congelados) y hallazgos con `fixHint`. Si responde `render_worker_not_configured`, el montaje se puede editar pero no renderizar: dilo.
+5. **Revisar** — `edit_craft_check` (`detail: true`) y la crítica P0/P1/P2 de `tubepoli-retencion` sobre la hoja de contactos del montaje completo. `show_editor` (`videoId` o `projectId`) enseña al usuario el preview, los fotogramas, la línea de tiempo, la transcripción con los cortes tachados y las sugerencias pendientes. Para verlo tú, pide la hoja de contactos de los cortes o fotogramas concretos (Avanzado, «Verificación»): llegan como imágenes con su descripción. Comprueba: cortes limpios (sin palabras a medias), intro visualmente parecida a la miniatura, rótulos legibles y fuera de la zona de botones, sonido sin saltos.
 6. **Corregir** — vuelve al paso 3 con lo que falle. Si algo quedó peor, deshazlo (historial, Avanzado) en lugar de rehacerlo a mano.
-7. **Final** — con el visto bueno del usuario, `edit_render_request` (`kind: "final"`, 1080p con los originales): al terminar, tubepoli registra el archivo como un **montaje nuevo en Postproducción** (`cuts_list` lo muestra con su versión). La elección del final sigue siendo explícita: con el usuario, `cuts_final_select` (`cutId`, `expectedCutRevision`, `expectedFinalId`) y después `pipeline_move` a `distribution`. Nada se publica desde aquí.
+7. **Final** — sin P0 ni P1 pendientes y con el visto bueno del usuario, `edit_render_request` (`kind: "final"`, 1080p con los originales): al terminar, tubepoli registra el archivo como un **montaje nuevo en Postproducción** (`cuts_list` lo muestra con su versión). La elección del final sigue siendo explícita: con el usuario, `cuts_final_select` (`cutId`, `expectedCutRevision`, `expectedFinalId`) y después `pipeline_move` a `distribution`. Nada se publica desde aquí.
 
 ## Revisiones y conflictos
 
@@ -48,7 +51,7 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 - Transcripción y edición por texto (paso 2–3): sin transcripción lista, `edit_transcript_request`; si responde `asr_not_configured`, `edit_transcript_import` con el SRT/VTT del usuario. Cortar o reponer por texto: `edit_transcript_cut` (`mode: "cut" | "restore"`, `words: [{transcriptId, wordIds}]`, `expectedRevision`). Además: `edit_transcript_request` (`operationId`, `language` opcional), `edit_transcript_import` (`assetId`, `format: srt | vtt | words`), `edit_transcript_get` (palabras con `at` en la composición o `null` si están cortadas; `byClip: true` para el texto por clip), `edit_transcript_cut`.
 - Sugerencias (paso 2–3): `edit_suggestions_propose` (`kinds`: `silence`, `filler`, `repeat`, `false_start`, `best_take`), `edit_suggestions_list`, `edit_suggestions_apply` (`ids` o `all`, `expectedRevision`, `dryRun`), `edit_suggestions_reject` (`ids`).
 - Gráficos, B-roll y sonido (paso 3): rótulos animados con la marca con `edit_text_add` (`blockId` de `edit_blocks_list`, `variables`, `at`, `duration`). Además: `edit_blocks_list`, `edit_text_add`, `edit_text_update`, `edit_broll_add`, `edit_transitions_set`, `edit_captions_generate`, `edit_audio_ducking_set`, `edit_templates_list`, `edit_templates_apply`; marca del canal con `channels_brand_get` / `channels_brand_set`; stock con `edit_stock_search` / `edit_stock_import` y archivos por enlace con `edit_assets_import_url` (solo con licencia que permita el uso).
-- Verificación (pasos 4–5 y 7): el resultado de cualquier render está en `edit_renders_get` (`renderId`): `pending`, `videoUrl`, métricas, `findings` con `fixHint` e imágenes. Además: `edit_snapshot` (`at`), `edit_contact_sheet` (`mode: review | grid`), `edit_compare` (`revisionA`, `revisionB`, `at`), `edit_check` (composición; con `renderId` de un vídeo terminado, además sonoridad −14 LUFS, picos, negros y congelados). Todas devuelven `render.id`: el resultado está en `edit_renders_get`. También `edit_renders_list`, `edit_render_cancel` y `edit_assets_derive` (rehacer copia ligera, audio y picos de un archivo).
+- Verificación (pasos 4–5 y 7): el resultado de cualquier render está en `edit_renders_get` (`renderId`): `pending`, avance, `videoUrl`, métricas y los `findings` más graves con `fixHint`. No sondees: pasa `waitSeconds: 55` y el servidor espera a que termine. Las imágenes de verificación solo llegan con `includeImages: true`; `full: true` da todos los hallazgos. Además: `edit_snapshot` (`at`), `edit_contact_sheet` (`mode: review | grid`), `edit_compare` (`revisionA`, `revisionB`, `at`), `edit_check` (composición; con `renderId` de un vídeo terminado, además sonoridad −14 LUFS, picos, negros y congelados). Todas devuelven `render.id`: el resultado está en `edit_renders_get`. También `edit_renders_list`, `edit_render_cancel` y `edit_assets_derive` (rehacer copia ligera, audio y picos de un archivo).
 - Historial: `edit_history_list` (quién hizo qué), `edit_history_undo` (deshace una revisión; si algo cambió después, avisa en vez de deshacer a ciegas), `edit_history_restore`.
 - Fuente (modo experto): `edit_source_get`, `edit_source_put` (HTML de la composición con la revisión esperada; sin scripts externos ni red).
 
@@ -56,6 +59,7 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 
 - **Primero el montaje, luego la música**, después gráficos y efectos: son lo que más pesa. Casi siempre hay más que quitar que añadir.
 - **La intro decide**: se entiende sin sonido (subtítulos), se parece a la miniatura y cambia de plano con frecuencia (≈ cada 2 s como referencia, no norma).
+- **Nada de relleno**: si falta material para cubrir la voz, para y pide más; nunca repitas clips ni alargues imágenes quietas (baremos en `tubepoli-retencion`).
 - **Transiciones que no se notan**; cortes en el silencio entre frases, nunca a mitad de palabra.
 - **Música por debajo de la voz** (con ducking si está disponible) y sonoridad final cerca de −14 LUFS.
 - **Rótulos cortos**: se leen de un vistazo; mejor un refuerzo visual en la grabación que una animación cara.
@@ -68,6 +72,7 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 - Pedir el render final antes de revisar un preview, o elegir el final sin el usuario.
 - Copiar tiempos de un montaje a otro: cada render es un montaje nuevo con sus tiempos.
 - Insertar música, B-roll o stock sin derechos claros.
+- Dar el montaje por terminado con avisos P0/P1 de `edit_craft_check` o sin haber mirado la hoja completa.
 
 ## Ejemplos
 

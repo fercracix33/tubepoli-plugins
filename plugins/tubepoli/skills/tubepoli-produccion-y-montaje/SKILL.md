@@ -12,7 +12,8 @@ Lo que pasa después de grabar pesa menos en el resultado que idea, packaging y 
 - La ficha tiene guion elegido (`scripts_select`) y va a grabarse.
 - Llegan archivos grabados o montajes del editor.
 - Hay que decidir el archivo final.
-- Si el montaje se hace **en tubepoli** (contigo, sin editor externo), sigue la guía `tubepoli-montaje`: su render final llega aquí como una versión más.
+- Si el montaje se hace **en tubepoli** (contigo, sin editor externo), sigue la guía `tubepoli-montaje` con los baremos de `tubepoli-retencion`: su render final llega aquí como una versión más.
+- Para revisar el montaje de un editor, la crítica P0/P1/P2 de `tubepoli-retencion` (ritmo, material repetido, estáticos, lectura, música) te da los comentarios por tiempo y capa.
 
 ## Flujo paso a paso — Producción
 
