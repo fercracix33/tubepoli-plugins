@@ -1,8 +1,8 @@
 {
   "name": "tubepoli",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "displayName": "tubepoli",
-  "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
+  "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, montaje, publicación y análisis) y añade las guías para trabajar paso a paso.",
   "author": {
     "name": "tubepoli",
     "email": "hola@tubepoli.com",

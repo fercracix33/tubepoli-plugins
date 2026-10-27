@@ -11,7 +11,7 @@
     {
       "name": "tubepoli",
       "source": "./plugins/tubepoli",
-      "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
+      "description": "Tu canal de YouTube con método: conecta Claude con tubepoli (contexto, buckets, ideas, packaging, guion, producción, montaje, publicación y análisis) y añade las guías para trabajar paso a paso.",
       "category": "productivity",
       "homepage": "https://tubepoli.com"
     }

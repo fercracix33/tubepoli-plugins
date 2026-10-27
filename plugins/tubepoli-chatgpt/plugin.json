@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tubepoli",
-  "version": "0.5.0",
-  "description": "Tu canal de YouTube con método: conecta ChatGPT con tubepoli (contexto, buckets, ideas, packaging, guion, producción, publicación y análisis) y añade las guías para trabajar paso a paso.",
+  "version": "0.7.0",
+  "description": "Tu canal de YouTube con método: conecta ChatGPT con tubepoli (contexto, buckets, ideas, packaging, guion, producción, montaje, publicación y análisis) y añade las guías para trabajar paso a paso.",
   "author": {
     "name": "tubepoli",
     "email": "hola@tubepoli.com",
@@ -24,7 +24,7 @@
       "interface": {
         "displayName": "tubepoli",
         "shortDescription": "Tu canal de YouTube con método",
-        "longDescription": "tubepoli es el sistema de trabajo de tu canal de YouTube. Con este plugin, ChatGPT lee y guarda en tu espacio de tubepoli (con los permisos que concedas al conectar) y sigue las guías del método: contexto del canal, estrategia y buckets, investigación e ideas, packaging de título y miniatura, guion, producción, publicación, análisis y negocio. Incluye vistas en el chat del Pipeline, la ficha de vídeo, el comparador de packaging, el plan y el análisis. Nunca publica nada sin tu confirmación.",
+        "longDescription": "tubepoli es el sistema de trabajo de tu canal de YouTube. Con este plugin, ChatGPT lee y guarda en tu espacio de tubepoli (con los permisos que concedas al conectar) y sigue las guías del método: contexto del canal, estrategia y buckets, investigación e ideas, packaging de título y miniatura, guion, producción, montaje del vídeo, publicación, análisis y negocio. Incluye vistas en el chat del Pipeline, la ficha de vídeo, el comparador de packaging, el plan, el análisis y el montaje. Nunca publica nada sin tu confirmación.",
         "developerName": "tubepoli",
         "category": "Productivity",
         "capabilities": [

@@ -48,7 +48,9 @@ tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, le
 | «Dame ideas», «sesión de ideas del mes», «¿es buena esta idea?» | `tubepoli-ideacion` |
 | «Títulos», «miniatura», «packaging», «prueba A/B» | `tubepoli-packaging` |
 | «Escríbeme el guion», «la intro», «estructura del vídeo» | `tubepoli-guion` |
-| «Grabación», «tomas», «sesión por lotes», «editor», «montaje» | `tubepoli-produccion-y-montaje` |
+| «Grabación», «tomas», «sesión por lotes», «pásaselo al editor», «revisa este montaje» | `tubepoli-produccion-y-montaje` |
+| «Móntame el vídeo», «quita los silencios», «pon música», «subtítulos», «renderiza el final» | `tubepoli-montaje` |
+| «Hazme una intro animada», «anima este dato», «gráfico animado», «haz el storyboard» | `tubepoli-motion` |
 | «Publicar», «descripción», «¿cómo va el vídeo?», «chequeo de 24 h» | `tubepoli-publicacion-y-analisis` |
 | «Lead magnet», «formulario», «leads», «oferta», «CTA» | `tubepoli-negocio-y-leads` |
 | «Revisión diaria / semanal / mensual», «qué desbloqueo hoy» | `tubepoli-rutinas` |

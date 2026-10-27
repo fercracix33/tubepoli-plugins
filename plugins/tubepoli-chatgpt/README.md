@@ -5,7 +5,7 @@ tubepoli es un sistema de trabajo para canales de YouTube: contexto del canal, e
 ## Qué incluye
 
 - **Conector MCP** `https://tubepoli.com/mcp`: lee y guarda en tu espacio de tubepoli con los permisos que concedas al conectar (inicio de sesión OAuth; tú eliges espacio, canales y permisos).
-- **Guías del método** (`skills/`): once guías en español, desde «tubepoli-empezar» hasta las rutinas semanales. La IA las carga cuando la tarea encaja.
+- **Guías del método** (`skills/`): doce guías en español, desde «tubepoli-empezar» hasta las rutinas semanales. La IA las carga cuando la tarea encaja.
 - **Vistas en el chat**: tablero del Pipeline, ficha de vídeo, comparador de packaging, plan y resumen de análisis.
 
 ## Instalación
