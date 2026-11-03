@@ -3,6 +3,8 @@ name: tubepoli-ideacion
 description: "Dirige la ideación de vídeos en tubepoli con el método: ejercicio 100→10→1 o sesión mensual de ocho ideas repartidas por buckets, evaluación cualitativa de los cinco criterios de alta audiencia (TAM, evergreen, fácil de ver en una miniatura, grado de diferencia, formato repetible), gran recompensa y brief, evidencia de demanda (500.000 vistas como orientación editable, evidencia comercial en B2B) y elección de la idea. Úsala cuando el usuario diga «dame ideas», «sesión de ideas del mes», «¿es buena esta idea?», «elige la mejor», «qué vídeo hago ahora» o «tengo una idea para un vídeo»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Ideación (M05 sobre fichas de M04)
 
 La idea es lo que más pesa: si es mala, nada de lo posterior la salva. Cada idea se apunta como un **título tentativo en lenguaje del espectador**, no como un tema.

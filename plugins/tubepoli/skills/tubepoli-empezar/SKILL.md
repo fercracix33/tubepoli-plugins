@@ -3,6 +3,8 @@ name: tubepoli-empezar
 description: "Orienta al asistente al empezar a trabajar con tubepoli por MCP (canales de YouTube con el método de tubepoli) y fija el protocolo seguro de uso de las herramientas. Úsala cuando empiece cualquier conversación sobre el canal, cuando el usuario diga «abre tubepoli», «¿en qué punto está mi canal?», «qué hago ahora», «ayúdame con mi canal de YouTube», cuando no sepas qué guía aplicar o cuando una herramienta devuelva un error de revisión, permisos o dependencias."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Empezar con tubepoli
 
 tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, leads, métricas) y aplica el método de tubepoli para crecer en YouTube y convertir vistas en clientes. No tiene IA dentro: el razonamiento lo pones tú; tubepoli guarda el resultado con versiones y actividad. Cada herramienta MCP es una operación del producto (`channels.context.update` se publica como `channels_context_update`).
@@ -15,7 +17,7 @@ tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, le
 
 ## Flujo paso a paso
 
-1. `capabilities_get` sin argumentos: espacios, canales, tus capacidades, perfil de herramientas y dominios. Para ver las operaciones de un dominio, vuelve a llamar con `domain` (p. ej. `{"domain":"plans"}`).
+1. `capabilities_get` (si al principio de esta guía ves «Versión de estas guías: X», pásala como `{"guidesVersion":"X"}`): espacios, canales, tus capacidades, perfil de herramientas y dominios. Para ver las operaciones de un dominio, vuelve a llamar con `domain` (p. ej. `{"domain":"plans"}`). Si responde `guides.outdated: true`, avisa al usuario **una vez por conversación** de que actualice el plugin desde el marketplace, con el texto de `guides.updateHint` que corresponda a tu cliente (Claude, Claude Code, ChatGPT o Codex), y sigue trabajando.
 2. Elige espacio y canal:
    - Un solo canal → úsalo y dilo en una frase.
    - Varios → pregunta cuál (muestra `workingName`). No mezcles canales en una misma tarea.

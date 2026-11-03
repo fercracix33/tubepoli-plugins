@@ -28,7 +28,11 @@ En Codex: `codex plugin marketplace add fercracix33/tubepoli-plugins --ref main`
 Cada plugin lleva un número de `version` en su `plugin.json`, y lo subimos cada vez que cambian las guías.
 
 - **ChatGPT:** pulsa el botón de refrescar (↻) junto al buscador de Plugins.
-- **Claude:** se actualiza solo si activaste la actualización automática del marketplace; si no, abre el plugin y pulsa **Actualizar**.
+- **Claude:** abre **Personalizar › Plugins › tubepoli** y actualízalo desde el marketplace. Si lo subiste con un archivo .zip, quítalo y añade este marketplace: el .zip no se actualiza.
+- **Claude Code:** `/plugin marketplace update tubepoli`.
+- **Codex:** vuelve a ejecutar `codex plugin marketplace add fercracix33/tubepoli-plugins --ref main`.
+
+Cada guía lleva al principio «Versión de estas guías»; tu IA la compara con la vigente en tubepoli y te avisa si toca actualizar.
 
 ## Contenido
 

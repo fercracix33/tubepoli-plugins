@@ -3,6 +3,8 @@ name: tubepoli-guion
 description: "Escribe el guion de un vídeo en tubepoli en menos de una hora con el método: empezar por la gran recompensa (el final), intro de tres P (promesa, prueba, plan; Picture y Pain como ingredientes), estructura en ejecución, conexión, profundización y cierre, reenganches, conflicto-contexto, bloques con pruebas verdaderas, CTA hacia el primer tercio y estructura de un solo cambio para vídeos educativos. Úsala cuando el usuario diga «escríbeme el guion», «hazme la intro», «estructura este vídeo», «convierte esto en guion», «revisa mi guion» o «prepara el teleprompter»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Guion y storytelling (M07)
 
 La retención depende del guion, no de la cámara ni de la edición. Y la intro es la parte que más audiencia pierde: si tienes 4 horas, dedica 3 a la intro.

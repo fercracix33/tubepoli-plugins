@@ -3,6 +3,8 @@ name: tubepoli-retencion
 description: "Aplica en tubepoli los baremos de montaje para retención antes y durante el montaje de un vídeo largo o un Short: ritmo de cambio visual por tramo, duración máxima de planos e imágenes, variedad de material sin repetir, tiempos de lectura, subtítulos, música bajo la voz, escenas animadas que no parezcan plantilla, Shorts con gancho en 1–2 s, y la revisión de oficio P0/P1/P2 sobre la hoja completa antes de dar nada por terminado. Incluye el modo «vídeo sin grabación» (locución + material). Úsala cuando el usuario diga «que retenga lo máximo posible», «móntalo con ritmo», «hazlo dinámico», «no tengo grabación, solo la voz», «revisa si el montaje engancha», «por qué se ve aburrido», «hazme un Short que enganche» o antes de cualquier montaje o motion."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Montaje para retención en tubepoli
 
 Retener es que nadie encuentre un motivo para irse: cada plano tiene que aportar algo nuevo y la promesa del título se cumple desde el primer segundo. Los números de esta guía son **baremos** razonables, no reglas de YouTube: si la curva de retención del canal dice otra cosa, manda la curva. Úsala junto con `tubepoli-montaje` (cómo editar) y `tubepoli-motion` (escenas animadas).

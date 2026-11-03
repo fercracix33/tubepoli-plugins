@@ -3,6 +3,8 @@ name: tubepoli-estrategia-y-buckets
 description: "Aplica la capa estratégica del método en tubepoli: diagnostica el nivel del canal (0–3) con evidencia, fija un único foco y la fase (prueba, optimización, acordeón), define los buckets de contenido, crea el plan de prueba (plantilla 5×3 o de tres meses) con su calendario y cierra el ciclo con decisiones Mantener/Cambiar/Probar/Retirar. Úsala cuando el usuario pregunte «¿en qué nivel estoy?», «¿en qué me centro?», «define mis buckets», «haz el plan de prueba», «calendario de publicaciones», «qué buckets funcionan» o «prepara el siguiente plan»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Estrategia, buckets y plan (M15 + M02)
 
 ## Cuándo usarla

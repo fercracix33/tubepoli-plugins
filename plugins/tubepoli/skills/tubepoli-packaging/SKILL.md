@@ -3,6 +3,8 @@ name: tubepoli-packaging
 description: "Trabaja el packaging (título + miniatura) de un vídeo en tubepoli con el método AIC (atención, interés, curiosidad) y la brecha de información: 30 títulos para quedarse con 3, tres conceptos de miniatura radicalmente distintos, parejas comparadas con su promesa, elección versionada y pruebas de YouTube Studio (máximo 3 opciones). Úsala cuando el usuario diga «hazme títulos», «ideas de miniatura», «packaging», «¿qué título pongo?», «compara estas miniaturas», «sube esta miniatura» o «quiero hacer un test A/B»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Packaging (M06)
 
 El packaging es la promesa del vídeo: decide si alguien hace clic y condiciona la intro. Va **antes** del guion: el packaging define la intro, no al revés.

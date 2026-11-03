@@ -3,6 +3,8 @@ name: tubepoli-motion
 description: "Crea en tubepoli escenas animadas (motion graphics) para un vídeo: intro, titular cinético, dato o gráfico animado, explicación paso a paso, cierre. Sigue el método por fases: brief, storyboard por beats aprobado por el usuario, escena de prueba, resto de escenas, revisión con tira de fotogramas y hoja de contactos con crítica P0/P1/P2, colocación en el montaje y render. Escenas en HTML con CSS/WAAPI, SVG o canvas, deterministas y con la marca del canal. Úsala cuando el usuario diga «hazme una intro animada», «anima este dato», «quiero un gráfico animado», «un titular que entre con fuerza», «explica esto con una animación», «haz el storyboard» o «mejora esta escena»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Escenas animadas en tubepoli (motion)
 
 Una escena animada es código (HTML + CSS/WAAPI, SVG o canvas) que tubepoli renderiza fotograma a fotograma: se edita con una frase y se vuelve a renderizar en minutos. Funciona muy bien para lo estructurado (tipografía cinética, datos, diagramas, logos, intros) y mal para lo orgánico (personas realistas, física real): no lo intentes.

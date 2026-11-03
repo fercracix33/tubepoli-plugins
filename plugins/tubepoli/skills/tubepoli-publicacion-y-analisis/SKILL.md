@@ -3,6 +3,8 @@ name: tubepoli-publicacion-y-analisis
 description: "Lleva un vídeo de tubepoli de montaje final a publicado y analizado: prepara y valida el paquete para YouTube Studio, lo exporta, vincula el vídeo publicado, organiza CTA, comentario fijado, pantallas finales y promoción, y hace los chequeos tras publicar (0 h, 24 h, 72 h, 7 días) de forma condicional, con diagnóstico impresiones → CTR → retención frente a un vídeo propio de referencia y aprendizajes que vuelven a buckets e ideas. Úsala cuando el usuario diga «prepara la publicación», «descripción y capítulos», «ya lo publiqué», «¿cómo va el vídeo?», «chequeo de 24 horas», «por qué no funciona este vídeo» o «qué aprendimos»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Publicación, distribución y análisis (M10 + M11)
 
 Publicar es siempre una acción explícita: mover la ficha de etapa no publica nada. La vía de v1 es **vía Studio**: tubepoli prepara y valida, la persona publica en YouTube Studio y después se vincula. La subida nativa por API existe pero está desactivada por defecto; no la actives.

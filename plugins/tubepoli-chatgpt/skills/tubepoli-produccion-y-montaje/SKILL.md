@@ -3,6 +3,8 @@ name: tubepoli-produccion-y-montaje
 description: "Organiza en tubepoli la grabación y el montaje de un vídeo según el método: tomas derivadas del guion elegido, sesiones de grabación por lotes (grabar el doble de lo que se publica), confirmación de grabación, entrega al editor, versiones de montaje con comentarios por tiempo y capa, revisión por bloques (montaje y música antes que gráficos y efectos) y elección del archivo final. Úsala cuando el usuario diga «prepara la grabación», «lista de tomas», «sesión de grabación», «ya grabé», «pásaselo al editor», «revisa este montaje», «comentarios al editor» o «este es el final»."
 ---
 
+> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+
 # Producción y postproducción (M08 + M09)
 
 Lo que pasa después de grabar pesa menos en el resultado que idea, packaging y guion: un buen guion mal editado funciona; un mal guion bien editado, no. Aquí el objetivo es ejecutar rápido lo preparado y montar para que se entienda y retenga.
