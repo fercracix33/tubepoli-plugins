@@ -3,7 +3,7 @@ name: tubepoli-contexto-canal
 description: "Guía el onboarding y la edición del contexto de un canal en tubepoli (punto de partida, tema, audiencia, objetivo y desarrollo) haciendo una pregunta cada vez y guardando cada respuesta con su procedencia. Úsala cuando el usuario cree un canal, diga «configura mi canal», «a quién le hablo», «define mi audiencia», «actualiza el contexto», «mi canal ya tiene vídeos», o cuando context_get muestre campos pendientes antes de investigar o definir buckets."
 ---
 
-> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
 
 # Contexto del canal (M01)
 

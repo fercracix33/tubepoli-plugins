@@ -3,7 +3,7 @@ name: tubepoli-retencion
 description: "Aplica en tubepoli los baremos de montaje para retención antes y durante el montaje de un vídeo largo o un Short: ritmo de cambio visual por tramo, duración máxima de planos e imágenes, variedad de material sin repetir, tiempos de lectura, subtítulos, música bajo la voz, escenas animadas que no parezcan plantilla, Shorts con gancho en 1–2 s, y la revisión de oficio P0/P1/P2 sobre la hoja completa antes de dar nada por terminado. Incluye el modo «vídeo sin grabación» (locución + material). Úsala cuando el usuario diga «que retenga lo máximo posible», «móntalo con ritmo», «hazlo dinámico», «no tengo grabación, solo la voz», «revisa si el montaje engancha», «por qué se ve aburrido», «hazme un Short que enganche» o antes de cualquier montaje o motion."
 ---
 
-> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
 
 # Montaje para retención en tubepoli
 
@@ -35,6 +35,7 @@ Retener es que nadie encuentre un motivo para irse: cada plano tiene que aportar
 
 ## Reglas del método
 
+- Para «ver» un vídeo, pide fotogramas y la transcripción por defecto; audio solo si tu cliente lo pasa al modelo y clip de vídeo solo si tu cliente pasa vídeo (ver «Avanzado»). Describe lo que viste citando el instante (mm:ss), no lo supongas.
 - **Orden de impacto**: montaje (qué se queda, en qué orden, qué se quita) > música > gráficos > efectos de sonido.
 - **Nada de relleno**: cada plano aporta algo nuevo. Un mismo archivo como mucho 2 veces y con tramos distintos.
 - **Nada quieto**: imagen fija ≤ 3 s, o ≤ 5 s con zoom/paneo lento (por defecto ya entra con deriva suave); escena animada ≤ 10 s con un beat cada 2–3 s.
@@ -62,6 +63,7 @@ Retener es que nadie encuentre un motivo para irse: cada plano tiene que aportar
 
 ## Avanzado (vía operations_call)
 
+- Ver un vídeo (cualquier archivo, montaje de Postproducción con `cutId`, render con `renderId` o material de Producción con `materialId`): **por defecto** `media_frames_get` (`at` hasta 12 instantes, `every`, `scenes: true` para un fotograma por cambio de plano o `sheet: {cols, rows}`; cada imagen trae su instante y lo que se dice alrededor) junto con la transcripción. Si tu cliente pasa audio al modelo, `media_audio_get` (`range` ≤ 60 s) para oír ritmo, tono, música y silencios. Solo si tu cliente pasa vídeo al modelo, `media_clip_get` (`range` ≤ 30 s, 360p): va como enlace y recurso embebido, y trae 3 fotogramas clave por si no te llega. Si alguno queda en curso, `media_extracts_get` (`extractId`, `waitSeconds: 55`). Que el audio o el vídeo lleguen al modelo depende del cliente, no de tubepoli.
 - Marca: `channels_brand_get`, `channels_brand_set` (colores, fuente, logo) antes de animar.
 - Material: `edit_broll_add` (imágenes con `motion: "auto"` por defecto: deriva suave; vídeo ya usado entra desde un tramo libre), `edit_stock_search`, `edit_stock_import`, `edit_assets_import_url`, `production_materials_attach` (subir lo generado fuera, con su procedencia).
 - Subtítulos y sonido: `edit_captions_generate` (también con la locución en la pista de audio), `edit_audio_ducking_set`, `edit_transitions_set`.

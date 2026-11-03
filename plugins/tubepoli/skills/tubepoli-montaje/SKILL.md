@@ -3,7 +3,7 @@ name: tubepoli-montaje
 description: "Monta en tubepoli el vídeo de una ficha desde la conversación: proyecto de montaje sobre los materiales grabados o un corte, propuesta de cortes (silencios, muletillas, repeticiones, mejor toma), edición por operaciones con revisión (dividir, recortar, mover, quitar con ripple, música, rótulos, subtítulos), preview, revisión visual con fotogramas y hoja de contactos, corrección y render final que llega a Postproducción como un montaje más. Úsala cuando el usuario diga «móntame el vídeo», «quita los silencios», «corta las muletillas», «haz un primer montaje», «pon música», «añade un rótulo», «subtítulos», «enséñame cómo va el montaje» o «renderiza el final»."
 ---
 
-> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
 
 # Montaje en tubepoli (M19)
 
@@ -48,6 +48,7 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 
 ## Avanzado (vía operations_call)
 
+- Ver un vídeo (cualquier archivo, montaje de Postproducción con `cutId`, render con `renderId` o material de Producción con `materialId`): **por defecto** `media_frames_get` (`at` hasta 12 instantes, `every`, `scenes: true` para un fotograma por cambio de plano o `sheet: {cols, rows}`; cada imagen trae su instante y lo que se dice alrededor) junto con la transcripción. Si tu cliente pasa audio al modelo, `media_audio_get` (`range` ≤ 60 s) para oír ritmo, tono, música y silencios. Solo si tu cliente pasa vídeo al modelo, `media_clip_get` (`range` ≤ 30 s, 360p): va como enlace y recurso embebido, y trae 3 fotogramas clave por si no te llega. Si alguno queda en curso, `media_extracts_get` (`extractId`, `waitSeconds: 55`). Que el audio o el vídeo lleguen al modelo depende del cliente, no de tubepoli.
 - Proyecto: `edit_project_create` (`operationId`; `source: {type: "materials"}` con `videoId`, `{type: "cut", cutId}` o `{type: "assets", assetIds}`; `durations` si tubepoli no conoce la duración de un archivo), `edit_projects_list`, `edit_project_get` (revisión, archivos con su estado de preparación, renders, sugerencias pendientes, lint).
 - Atajos de edición: `edit_clips_split`, `edit_clips_trim`, `edit_clips_move`, `edit_clips_delete`, `edit_clips_add`, `edit_audio_add` (música con volumen y fundidos), `edit_variables_set`.
 - Transcripción y edición por texto (paso 2–3): sin transcripción lista, `edit_transcript_request`; si responde `asr_not_configured`, `edit_transcript_import` con el SRT/VTT del usuario. Cortar o reponer por texto: `edit_transcript_cut` (`mode: "cut" | "restore"`, `words: [{transcriptId, wordIds}]`, `expectedRevision`). Además: `edit_transcript_request` (`operationId`, `language` opcional), `edit_transcript_import` (`assetId`, `format: srt | vtt | words`), `edit_transcript_get` (palabras con `at` en la composición o `null` si están cortadas; `byClip: true` para el texto por clip), `edit_transcript_cut`.
@@ -60,6 +61,7 @@ El montaje cuenta la historia: su misión es que la gente vea el vídeo más tie
 
 ## Reglas del método
 
+- Para «ver» un vídeo, pide fotogramas y la transcripción por defecto; audio solo si tu cliente lo pasa al modelo y clip de vídeo solo si tu cliente pasa vídeo (ver «Avanzado»). Describe lo que viste citando el instante (mm:ss), no lo supongas.
 - **Primero el montaje, luego la música**, después gráficos y efectos: son lo que más pesa. Casi siempre hay más que quitar que añadir.
 - **La intro decide**: se entiende sin sonido (subtítulos), se parece a la miniatura y cambia de plano con frecuencia (≈ cada 2 s como referencia, no norma).
 - **Nada de relleno**: si falta material para cubrir la voz, para y pide más; nunca repitas clips ni alargues imágenes quietas (baremos en `tubepoli-retencion`).

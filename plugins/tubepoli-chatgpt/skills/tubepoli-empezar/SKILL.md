@@ -3,7 +3,7 @@ name: tubepoli-empezar
 description: "Orienta al asistente al empezar a trabajar con tubepoli por MCP (canales de YouTube con el método de tubepoli) y fija el protocolo seguro de uso de las herramientas. Úsala cuando empiece cualquier conversación sobre el canal, cuando el usuario diga «abre tubepoli», «¿en qué punto está mi canal?», «qué hago ahora», «ayúdame con mi canal de YouTube», cuando no sepas qué guía aplicar o cuando una herramienta devuelva un error de revisión, permisos o dependencias."
 ---
 
-> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
 
 # Empezar con tubepoli
 
@@ -29,6 +29,7 @@ tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, le
 
 ## Reglas de trabajo (no negociables)
 
+- Para «ver» un vídeo, pide fotogramas y la transcripción por defecto; audio solo si tu cliente lo pasa al modelo y clip de vídeo solo si tu cliente pasa vídeo (ver «Avanzado»). Describe lo que viste citando el instante (mm:ss), no lo supongas.
 - **Lee antes de escribir.** Toda mutación lleva la revisión que leíste (`expectedRevision`, `expectedContextRevision`, `expectedBucketRevision`, `expectedPlanRevision`, `expectedBriefRevision`…; el nombre exacto está en el esquema de cada herramienta).
 - **`operationId`:** genera un UUID nuevo por cada cambio que quieras hacer y **reutilízalo solo para reintentar ese mismo cambio** (misma entrada). Si dudas de si un reintento se aplicó, repítelo con el mismo `operationId`: no duplica (la respuesta trae `operation.replayed: true`).
 - **`REVISION_CONFLICT`:** otra persona o pestaña cambió el objeto. Vuelve a leer, explica al usuario qué cambió y replantea tu cambio sobre lo vigente. Nunca sobrescribas a ciegas.
@@ -66,6 +67,7 @@ El conector `https://tubepoli.com/mcp` publica como herramientas el **núcleo** 
 
 ## Avanzado (vía operations_call)
 
+- Ver un vídeo (cualquier archivo, montaje de Postproducción con `cutId`, render con `renderId` o material de Producción con `materialId`): **por defecto** `media_frames_get` (`at` hasta 12 instantes, `every`, `scenes: true` para un fotograma por cambio de plano o `sheet: {cols, rows}`; cada imagen trae su instante y lo que se dice alrededor) junto con la transcripción. Si tu cliente pasa audio al modelo, `media_audio_get` (`range` ≤ 60 s) para oír ritmo, tono, música y silencios. Solo si tu cliente pasa vídeo al modelo, `media_clip_get` (`range` ≤ 30 s, 360p): va como enlace y recurso embebido, y trae 3 fotogramas clave por si no te llega. Si alguno queda en curso, `media_extracts_get` (`extractId`, `waitSeconds: 55`). Que el audio o el vídeo lleguen al modelo depende del cliente, no de tubepoli.
 - Resultado registrado de un `operationId`: `operations_get`.
 - Buscar por texto en fichas, buckets, referencias, fuentes y leads: `space_search`. Qué ha cambiado y quién: `activity_list`.
 - Seguir un trabajo en segundo plano (`jobId`): `jobs_get` (y `jobs_cancel`). En el núcleo, di que está en marcha y vuelve a leer el objeto más tarde.
