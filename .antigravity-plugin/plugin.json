@@ -1,0 +1,30 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "tubepoli",
+  "version": "0.9.0",
+  "displayName": "tubepoli",
+  "description": "Tu canal de YouTube con método: conecta Antigravity con tubepoli (ideas, packaging, guion, montaje y análisis) y añade las guías.",
+  "logo": "plugins/tubepoli/assets/logo.png",
+  "skills": "plugins/tubepoli/skills",
+  "suggestedPrompts": [
+    "¿En qué punto está mi canal y qué hago hoy?",
+    "Dame 10 ideas para mi próximo vídeo con su título",
+    "Prepara el guion del vídeo que tengo en producción"
+  ],
+  "author": {
+    "name": "tubepoli",
+    "email": "hola@tubepoli.com",
+    "url": "https://tubepoli.com"
+  },
+  "homepage": "https://tubepoli.com",
+  "repository": "https://github.com/fercracix33/tubepoli-plugins",
+  "license": "LicenseRef-tubepoli",
+  "keywords": [
+    "youtube",
+    "creadores",
+    "packaging",
+    "guion",
+    "estrategia",
+    "mcp"
+  ]
+}

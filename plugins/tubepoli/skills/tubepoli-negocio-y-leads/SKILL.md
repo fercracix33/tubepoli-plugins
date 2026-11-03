@@ -3,7 +3,7 @@ name: tubepoli-negocio-y-leads
 description: "Monta y opera en tubepoli la conversión del canal en clientes: oferta, lead magnet, formulario de 1–3 preguntas de cualificación con consentimiento, enlaces atribuibles por vídeo y ubicación, CTA de cada vídeo (hacia el primer tercio), vídeo central y recorrido, mini CRM de leads con sus estados y medición del embudo. Úsala cuando el usuario diga «quiero conseguir clientes con el canal», «crea un lead magnet», «hazme el formulario», «pon el enlace en la descripción», «qué CTA pongo», «¿cuántos leads me ha traído este vídeo?», «revisa mis leads» o «¿por qué no convierte?»."
 ---
 
-> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Negocio, leads y conversión (M16)
 

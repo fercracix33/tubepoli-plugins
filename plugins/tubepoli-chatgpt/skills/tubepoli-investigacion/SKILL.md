@@ -3,7 +3,7 @@ name: tubepoli-investigacion
 description: "Investiga para un canal en tubepoli siguiendo el método: reúne 20–30 canales de referencia, saca su inventario por playlist (sin gastar búsquedas), detecta outliers con el método de la mediana, analiza el hook en cinco componentes, guarda referencias con «qué te interesa» y «cómo adaptarlo», propone ideas propias y recoge señales e historias reales del creador (Mis fuentes). Úsala cuando el usuario diga «busca referencias», «qué canales sigue mi audiencia», «encuentra outliers», «analiza este vídeo», «guarda este vídeo», «qué problemas tiene mi audiencia» o «esta semana un cliente me preguntó…»."
 ---
 
-> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Investigación y fuentes propias (M03 + M12 + M17)
 

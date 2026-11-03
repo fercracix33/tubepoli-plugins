@@ -3,7 +3,7 @@ name: tubepoli-montaje
 description: "Monta en tubepoli el vídeo de una ficha desde la conversación: proyecto de montaje sobre los materiales grabados o un corte, propuesta de cortes (silencios, muletillas, repeticiones, mejor toma), edición por operaciones con revisión (dividir, recortar, mover, quitar con ripple, música, rótulos, subtítulos), preview, revisión visual con fotogramas y hoja de contactos, corrección y render final que llega a Postproducción como un montaje más. Úsala cuando el usuario diga «móntame el vídeo», «quita los silencios», «corta las muletillas», «haz un primer montaje», «pon música», «añade un rótulo», «subtítulos», «enséñame cómo va el montaje» o «renderiza el final»."
 ---
 
-> Versión de estas guías: 0.8.4 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.9.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Montaje en tubepoli (M19)
 
