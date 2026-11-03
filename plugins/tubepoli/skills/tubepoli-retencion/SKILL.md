@@ -50,6 +50,7 @@ Retener es que nadie encuentre un motivo para irse: cada plano tiene que aportar
 - Mirar la hoja de contactos y no actuar sobre lo que se ve (planos repetidos, estáticos).
 - Animar con la paleta por defecto porque la marca no está configurada.
 - Dar el montaje por bueno con un preview que no se ha podido ver entero.
+- Trocear el render final en proyectos «temporales» y dejarlos a la vista: renderiza el final en un único proyecto bien nombrado y archiva los de prueba al terminar (Avanzado, «Orden de proyectos» en tubepoli-montaje).
 
 ## Ejemplos
 

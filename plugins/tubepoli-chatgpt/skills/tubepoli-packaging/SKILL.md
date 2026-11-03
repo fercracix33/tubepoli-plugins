@@ -27,7 +27,7 @@ El packaging es la promesa del vídeo: decide si alguien hace clic y condiciona 
 ## Avanzado (vía operations_call)
 
 - Fórmulas del canal: `packaging_formulas_suggest` → `packaging_formulas_apply` (si falta una variable responde `variables_pending`).
-- Archivar títulos descartados: `packaging_titles_update` (`archived: true`). Vista conjunta guardada: `packaging_pairs_compare`.
+- Archivar títulos descartados: `packaging_titles_update` (`archived: true`). Tras elegir la pareja, archiva los descartados de la lluvia (deja el elegido y como mucho 2 alternativas) para que la ficha no muestre 30 opciones al mismo nivel. Vista conjunta guardada: `packaging_pairs_compare`.
 - Subir la imagen desde el chat (si tu cliente puede subir archivos): `assets_upload_init` (`kind: "image"`, `mimeType`, `sizeBytes`) → PUT a la URL firmada → `assets_upload_complete` → `packaging_assets_attach` con `file: {assetId}` y `provenance` (`source: "agent_client"`, `generated: true`, `tool`); fotos del creador con consentimiento: `packaging_library_list` y `file: {creatorPhotoId}`. `markFinal: true` solo con archivo verificado.
 - Pruebas registradas en Packaging: `packaging_tests_record` (`kind: "studio_native"` con hasta 3 opciones, `editorial` o `external_feedback`) y `packaging_tests_close` (`decided | inconclusive | no_data`; en Studio, decidir exige `watchTimeContext`).
 

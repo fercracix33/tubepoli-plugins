@@ -39,6 +39,7 @@ Lo que pasa después de grabar pesa menos en el resultado que idea, packaging y 
 - Tomas: `production_takes_derive` (una por bloque y una por recurso declarado; repetirlo no duplica), `production_takes_update` (`status`: `recorded` exige `evidence` si lo haces tú; `not_applicable` exige `reason`) y `production_takes_add` (toma suelta).
 - Sesiones por lotes: `production_session_create` (`name`, `videoIds` hasta 20, `localDate`, `startTime`, `location`, `needs`) y `production_sessions_list`.
 - Producción: `production_checks_set` (`template`: `studio`, `screencast`, `podcast`), `production_notes_add` (indicaciones con `atSeconds`), `production_materials_update`.
+- Orden en la ficha: cada indicación es UNA acción concreta para el editor (≤ 280 caracteres, con `atSeconds` si aplica); no uses indicaciones como informe o registro de lo que hiciste (eso va en tu respuesta al usuario o en el corte). Pon a los materiales un `label` corto y descriptivo y marca `usable: false` lo descartado, en vez de dejar decenas de pruebas al mismo nivel.
 - Colchón detallado: `production_buffer_get` o `strategy_buffer_get`.
 - Postproducción: `cuts_get`, `cuts_review` (`scope`: `intro | block | full`; `layer`; `result`), `cuts_comments_list`, `cuts_comments_resolve`, `cuts_comments_migrate` (traslada comentarios a la versión nueva con su **nuevo** tiempo), `cuts_maps_set` (bloque → tiempo, útil para leer la retención), `cuts_export` (Markdown para un editor externo) y `media_still_extract` (`atSeconds`, si el servidor tiene FFmpeg).
 
