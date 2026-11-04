@@ -38,3 +38,11 @@ Tres líneas: dato con su cobertura («300 impresiones en 22 h; CTR 4,1 %, muest
 
 - Qué informes hay y su demora: `analytics_available_reports`; detalle de un vídeo: `analytics_video_get`.
 - Retención mapeada a los bloques del guion: `analytics_retention_map`.
+- Desgloses que ayudan en cada momento: `analytics_insights_get` con `videoId` y `sections` (respuesta compacta: top 5 + totales; `detail: true` solo si hace falta). Un desglose con pocos datos vuelve `state: "empty"` (umbrales de privacidad de YouTube): es «aún no lo sabemos», no cero.
+
+| Momento | Qué pedir | Qué responde |
+| --- | --- | --- |
+| 0–24 h | `analytics_live_stats_get` | Ritmo de vistas por hora (contador público) antes de que llegue Analytics. No lo mezcles con las vistas de Analytics. |
+| 24 h | `sections: ["traffic"]` (fuentes de tráfico y lugar de reproducción) | ¿De dónde llegan: búsqueda, sugeridos, inicio, externo? Si solo vive de notificaciones, aún no ha salido a audiencia nueva. |
+| 72 h | `sections: ["audience", "traffic"]` (suscritos/no suscritos, términos de búsqueda, sugerido junto a, países, dispositivos) | ¿Llega a no suscritos? ¿Con qué búsquedas y junto a qué vídeos? ¿Público y dispositivo esperados (móvil o TV cambian cómo se ve la miniatura)? |
+| 7 días | `sections: ["formats", "engagement"]` del canal y del vídeo; `analytics_report_facts_get` con `report: "channel_end_screens_a2"` o `"channel_cards_a1"` | Shorts frente a largos (vistas, interesadas, duración, suscriptores), compartidos y añadidos a listas, y si la pantalla final y las tarjetas generan clics. La comparativa por buckets sale en `analytics_insights_get` del canal. |

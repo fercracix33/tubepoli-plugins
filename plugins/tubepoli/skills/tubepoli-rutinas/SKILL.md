@@ -3,7 +3,7 @@ name: tubepoli-rutinas
 description: "Ejecuta en tubepoli las tres rutinas de revisión del método como checklists con sus operaciones: revisión diaria operativa (qué desbloquear hoy), revisión semanal de métricas (qué aprendimos y en qué próxima ficha se aplica) más la revisión semanal de fuentes propias, y revisión mensual de estrategia (nivel, foco, plan, ritmo, colchón e ideación del mes). Úsala cuando el usuario diga «revisión diaria», «qué hago hoy», «qué está bloqueado», «revisión semanal», «qué aprendimos esta semana», «revisión del mes», «cierre de mes» o «planifica el próximo mes»."
 ---
 
-> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.10.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Rutinas de revisión
 

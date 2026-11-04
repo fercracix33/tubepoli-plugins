@@ -3,7 +3,7 @@ name: tubepoli-contexto-canal
 description: "Guía el onboarding y la edición del contexto de un canal en tubepoli (punto de partida, tema, audiencia, objetivo y desarrollo) haciendo una pregunta cada vez y guardando cada respuesta con su procedencia. Úsala cuando el usuario cree un canal, diga «configura mi canal», «a quién le hablo», «define mi audiencia», «actualiza el contexto», «mi canal ya tiene vídeos», o cuando context_get muestre campos pendientes antes de investigar o definir buckets."
 ---
 
-> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.10.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Contexto del canal (M01)
 
@@ -39,8 +39,8 @@ Todo lo demás (problemas concretos de la audiencia, conocimiento propio, difere
 4. Con la nueva `revision`, repite 1–3 hasta que `nextQuestion` sea `null`. El usuario puede posponer cualquier pregunta: sigue con la siguiente y deja la pendiente como desconocida.
 5. Cierre: muestra un resumen de 4 líneas (punto de partida, tema, audiencia, objetivo) y pregunta si hay algo más; si lo hay, añádelo a `bodyMarkdown` (lee el cuerpo vigente y añade una sección, no lo sustituyas).
 6. Siguiente paso según el punto de partida:
-   - `planned` o sin publicaciones: nivel 0 provisional, foco «completar la prueba de buckets» → `tubepoli-estrategia-y-buckets`.
-   - `existing_with_publications`: propón que la persona titular conecte YouTube desde **Ajustes** en la web de tubepoli (tú nunca recibes tokens); mientras tanto, los datos de Studio que te pase se registran como declarados (`analytics_import`). Después, diagnóstico de nivel con evidencia (`tubepoli-estrategia-y-buckets`).
+   - `planned` o sin publicaciones: nivel 0 provisional, foco «completar la prueba de buckets» → `tubepoli-estrategia-y-buckets`. Cuando haya buckets, crea y deja a punto el canal en YouTube con `tubepoli-canal-youtube`.
+   - `existing_with_publications`: propón que la persona titular conecte YouTube desde **Canal → YouTube** en la web de tubepoli (tú nunca recibes tokens; guía `tubepoli-canal-youtube`); mientras tanto, los datos de Studio que te pase se registran como declarados (`analytics_import`). Después, diagnóstico de nivel con evidencia (`tubepoli-estrategia-y-buckets`).
 
 ## Avanzado (vía operations_call)
 
@@ -66,4 +66,4 @@ Todo lo demás (problemas concretos de la audiencia, conocimiento propio, difere
 
 - «Mi canal es para empresarios que quieren usar IA en su negocio, quiero conseguir clientes» → guardas en una llamada `audience.description` (declaración) y `primaryGoal.kind: "leads"` con `primaryGoal.details` (literal) → preguntas lo siguiente pendiente («¿En qué punto está tu canal?»).
 - «Cambia la audiencia a dueños de pymes de servicios» → `channels_context_get` → `channels_context_update` con `expectedContextRevision` → «Guardado (revisión 5). ¿Revisamos si tus buckets siguen encajando?».
-- «Ya tengo 40 vídeos publicados» → `startingPoint: "existing_with_publications"` → proponer conectar YouTube desde Ajustes de tubepoli y después diagnóstico de nivel.
+- «Ya tengo 40 vídeos publicados» → `startingPoint: "existing_with_publications"` → proponer conectar YouTube desde Canal → YouTube en tubepoli y después diagnóstico de nivel.

@@ -3,7 +3,7 @@ name: tubepoli-empezar
 description: "Orienta al asistente al empezar a trabajar con tubepoli por MCP (canales de YouTube con el método de tubepoli) y fija el protocolo seguro de uso de las herramientas. Úsala cuando empiece cualquier conversación sobre el canal, cuando el usuario diga «abre tubepoli», «¿en qué punto está mi canal?», «qué hago ahora», «ayúdame con mi canal de YouTube», cuando no sepas qué guía aplicar o cuando una herramienta devuelva un error de revisión, permisos o dependencias."
 ---
 
-> Versión de estas guías: 0.9.1 (compárala con guides.latestVersion de capabilities_get).
+> Versión de estas guías: 0.10.0 (compárala con guides.latestVersion de capabilities_get).
 
 # Empezar con tubepoli
 
@@ -46,6 +46,7 @@ tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, le
 | El usuario dice… | Guía |
 | --- | --- |
 | «Configura mi canal», «a quién hablo», «empecemos» | `tubepoli-contexto-canal` |
+| «Crea mi canal de YouTube», «conecta YouTube», «banner», «descripción del canal», «página de inicio», «listas», «podcast» | `tubepoli-canal-youtube` |
 | «¿En qué nivel estoy?», «define mis buckets», «plan de prueba», «revisar el ciclo» | `tubepoli-estrategia-y-buckets` |
 | «Busca referencias», «canales de mi nicho», «outliers», «qué me ha pasado esta semana con clientes» | `tubepoli-investigacion` |
 | «Dame ideas», «sesión de ideas del mes», «¿es buena esta idea?» | `tubepoli-ideacion` |
@@ -57,6 +58,7 @@ tubepoli guarda el canal (contexto, buckets, plan, fichas de vídeo, fuentes, le
 | «Que retenga lo máximo», «móntalo con ritmo», «solo tengo la voz», «¿por qué se ve aburrido?», «Short que enganche» | `tubepoli-retencion` (siempre junto con montaje y motion) |
 | «Publicar», «descripción», «¿cómo va el vídeo?», «chequeo de 24 h» | `tubepoli-publicacion-y-analisis` |
 | «Lead magnet», «formulario», «leads», «oferta», «CTA» | `tubepoli-negocio-y-leads` |
+| «Programa un directo», «clave para OBS», «qué preguntan en el chat», «silencia a…», «encuesta», «Super Chat», «miembros» | `tubepoli-directos` |
 | «Revisión diaria / semanal / mensual», «qué desbloqueo hoy» | `tubepoli-rutinas` |
 
 Si tu cliente no carga estas guías como skills, léelas con `guides_list` y `guides_get` (o los recursos `tubepoli://guias/{nombre}`).
